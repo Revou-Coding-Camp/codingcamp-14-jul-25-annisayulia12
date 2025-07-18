@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Auto isi nama pengguna dari prompt atau default
   const name = prompt("Siapa nama kamu?") || "Guest";
   document.getElementById("userName").textContent = name;
 
