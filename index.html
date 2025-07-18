@@ -2,75 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Website</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-
-  <header class="navbar">
-    <div class="logo">😊</div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Our Profile</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Message Us</a></li>
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="img/profile1.jpg" alt="profile" class="profile-img">
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#profile">Our Profile</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#message">Message Us</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>Hi Harfi, Welcome To Website</h1>
-    <p>Ini adalah website latihan pertama</p>
-    <div class="date" id="today-date"></div>
-  </section>
+  <main>
+    <section id="home" class="section">
+        <div class="home-container">
+            <div class="home-text">
+            <h2>Hi! This is <span id="userName">Guest</span>'s Website</h2>
+            <p>
+                Ini adalah website portofolio pertamaku. Kamu bisa mengeksplor portofolioku di halaman
+                <q>Portofolio</q>. Ayo kenal lebih lanjut tentangku!
+            </p>
+            </div>
+            <div class="home-image">
+            <img src="img/profile4.jpg" alt="Gambar Home" />
+            </div>
+        </div>
+    </section>
 
-  <section class="headquarter">
-    <h2>Our Headquarter</h2>
-    <div class="cities">
-      <div class="city">Jakarta</div>
-      <div class="city">Bandung</div>
-      <div class="city">Surabaya</div>
-    </div>
-  </section>
 
-  <section class="message">
-    <h2>Message Us</h2>
-    <form id="messageForm">
-      <label for="name">Nama:</label>
-      <input type="text" id="name" name="name" required />
+    <section id="profile" class="section">
+        <h3>Our Profile</h3>
+            <div class="profile-container">
+                <div class="profile-image">
+                <img src="img/profile1.jpg" alt="Foto Profil" />
+                </div>
+                <div class="profile-description">
+                <h4>Annisa Yulia Vita</h4>
+                <p>Saya merupakan mahasiswa Teknik Informatika, dengan minat di bidang UI/UX, FrontEnd dan Data Analyst. Saya memiliki pengalaman dalam desain menggunakan Figma, serta sedang memperdalam kemampuan di bidang pemrograman front-end dan back-end.</p>
+                <p>Email: annisa.vita07@gmail.com</p>
+                </div>
+            </div>
+    </section>
 
-      <label for="birth">Tanggal Lahir:</label>
-      <input type="date" id="birth" name="birth" required />
-
-      <label>Jenis Kelamin:</label>
-      <div class="gender">
-        <label><input type="radio" name="gender" value="Laki-Laki" required /> Laki-Laki</label>
-        <label><input type="radio" name="gender" value="Perempuan" required /> Perempuan</label>
+    <section id="portfolio" class="section">
+      <h3>Portfolio</h3>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">📁 Project A</div>
+        <div class="portfolio-item">📁 Project B</div>
+        <div class="portfolio-item">📁 Project C</div>
       </div>
+    </section>
 
-      <label for="message">Pesan:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
+    <section id="message" class="section">
+      <h3>Message Us</h3>
+      <form id="messageForm">
+        <label>Name:</label>
+        <input type="text" id="name" placeholder="Masukkan Nama Anda" required />
 
-      <button type="submit">Submit</button>
-    </form>
+        <label>Gender:</label>
+        <select id="gender" title="Pilih Jenis Kelamin" required>
+          <option value="">Pilih</option>
+          <option value="Laki-Laki">Laki-Laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
 
-    <div class="result">
-      <h3>Current Time:</h3>
-      <p id="currentTime"></p>
-      <h3>Hasil Pesan:</h3>
-      <p><strong>Nama:</strong> <span id="outputName"></span></p>
-      <p><strong>TTL:</strong> <span id="outputTTL"></span></p>
-      <p><strong>Gender:</strong> <span id="outputGender"></span></p>
-      <p><strong>Pesan:</strong> <span id="outputMessage"></span></p>
-    </div>
-  </section>
+        <label>Message:</label>
+        <textarea id="messageText" placeholder="Tulis pesan Anda" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <div class="output-box">
+        <p><strong>Current Time:</strong> <span id="currentTime">-</span></p>
+        <p><strong>Your Name:</strong> <span id="outputName">-</span></p>
+        <p><strong>Gender:</strong> <span id="outputGender">-</span></p>
+        <p><strong>Your Message:</strong> <span id="outputMessage">-</span></p>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>Created by Reza</p>
+    <p>Created by Annisa Yulia Vita</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

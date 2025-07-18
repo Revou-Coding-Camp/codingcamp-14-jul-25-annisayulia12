@@ -1,27 +1,23 @@
-// Tampilkan tanggal hari ini
-document.getElementById('today-date').innerText = new Date().toLocaleDateString();
+document.addEventListener("DOMContentLoaded", function () {
+  // Auto isi nama pengguna dari prompt atau default
+  const name = prompt("Siapa nama kamu?") || "Guest";
+  document.getElementById("userName").textContent = name;
 
-// Tampilkan waktu saat ini
-function updateCurrentTime() {
-  const now = new Date();
-  document.getElementById('currentTime').innerText = now.toLocaleString();
-}
-updateCurrentTime();
-setInterval(updateCurrentTime, 1000);
+  // Form handler
+  const form = document.getElementById("messageForm");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const nameInput = document.getElementById("name").value;
+    const genderInput = document.getElementById("gender").value;
+    const messageInput = document.getElementById("messageText").value;
+    const time = new Date().toLocaleString();
 
-// Tangani form
-document.getElementById('messageForm').addEventListener('submit', function (e) {
-  e.preventDefault();
+    document.getElementById("currentTime").textContent = time;
+    document.getElementById("outputName").textContent = nameInput;
+    document.getElementById("outputGender").textContent = genderInput;
+    document.getElementById("outputMessage").textContent = messageInput;
 
-  const name = document.getElementById('name').value;
-  const birth = document.getElementById('birth').value;
-  const gender = document.querySelector('input[name="gender"]:checked').value;
-  const message = document.getElementById('message').value;
+    form.reset();
+  });
 
-  document.getElementById('outputName').innerText = name;
-  document.getElementById('outputTTL').innerText = birth;
-  document.getElementById('outputGender').innerText = gender;
-  document.getElementById('outputMessage').innerText = message;
-
-  this.reset(); // kosongkan form setelah submit
 });
